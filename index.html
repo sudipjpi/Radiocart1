@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>A&A Services and Technology</title>
+<title>Radiokart | A&A Services and Technology</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="manifest" href="/manifest.json"/>
 <meta name="theme-color" content="#1a4fa0"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-<meta name="apple-mobile-web-app-title" content="A&amp;A Shop"/>
+<meta name="apple-mobile-web-app-title" content="Radiokart"/>
 <link rel="apple-touch-icon" href="/icon-192.png"/>
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/>
 <style>
@@ -28,8 +28,8 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#1a4fa0 0
 .banner-inner{max-width:1280px;margin:auto;display:flex;align-items:center;gap:14px;padding:10px 0;flex-wrap:wrap}
 .logo-block{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
 .logo-icon{width:46px;height:46px;background:var(--accent);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;color:var(--blue-dark);box-shadow:0 2px 8px rgba(245,166,35,.4);flex-shrink:0}
-.logo-text .main{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:#fff;line-height:1.1}
-.logo-text .sub{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:2px;text-transform:uppercase}
+.logo-text .main{font-family:'Rajdhani',sans-serif;font-size:30px;font-weight:700;font-style:italic;color:#fff;line-height:1;letter-spacing:.5px}.logo-text .main span{color:var(--accent)}
+.logo-text .sub{font-size:10px;font-weight:600;font-style:italic;color:rgba(255,255,255,.75);letter-spacing:.3px;margin-top:2px}
 .banner-nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
 .nav-btn{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:6px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:background .2s;white-space:nowrap}
 .nav-btn:hover{background:rgba(255,255,255,.22)}
@@ -188,7 +188,7 @@ footer strong{color:var(--accent)}
   .card-name{font-size:12px}
   .card-price{font-size:16px}
   .banner-nav .nav-btn:not(.accent){display:none}
-  .logo-text .main{font-size:16px}
+  .logo-text .main{font-size:24px}
   .search-bar select{display:none}
   .contact-strip{flex-direction:column;text-align:center}
   .contact-btns{justify-content:center}
@@ -208,10 +208,10 @@ footer strong{color:var(--accent)}
 <header class="banner">
   <div class="banner-inner">
     <a class="logo-block" href="#">
-      <div class="logo-icon">A&amp;A</div>
+      <div class="logo-icon">📻</div>
       <div class="logo-text">
-        <div class="main">A&amp;A Services and Technology</div>
-        <div class="sub">Your Trusted Online Store</div>
+        <div class="main">Radio<span>kart</span></div>
+        <div class="sub">by A&amp;A Services and Technology</div>
       </div>
     </a>
     <nav class="banner-nav">
@@ -744,7 +744,7 @@ footer strong{color:var(--accent)}
 </div><!-- /container -->
 
 <footer>
-  <p>© 2025 <strong>A&amp;A Services and Technology</strong> — All Rights Reserved</p>
+  <p>© 2025 <strong>Radiokart</strong> · by A&amp;A Services and Technology — All Rights Reserved</p>
   <p style="margin-top:4px">📲 WhatsApp Orders: <strong style="color:#25D366">8637554239</strong> &nbsp;|&nbsp; Send the <strong>Order Code</strong> to place your order instantly!</p>
 </footer>
 
@@ -1480,7 +1480,7 @@ function setMain(id,el,src){
 
 // WhatsApp order
 function waOrder(code,name){
-  const msg=encodeURIComponent('Hi A&A Services! I want to order:\nProduct: '+name+'\nOrder Code: '+code+'\nPlease confirm availability and delivery details.');
+  const msg=encodeURIComponent('Hi Radiokart! I want to order:\nProduct: '+name+'\nOrder Code: '+code+'\nPlease confirm availability and delivery details.');
   window.open('https://wa.me/918637554239?text='+msg,'_blank');
 }
 
@@ -1533,7 +1533,7 @@ function checkoutCart(){
   if(cart.length===0) return;
   const lines = cart.map(i=>`• ${i.name} (Code: ${i.code}) x${i.qty} = Rs.${(i.price*i.qty).toLocaleString()}`).join('\n');
   const total = cart.reduce((s,i)=>s+(i.price*i.qty),0);
-  const msg = encodeURIComponent('Hi A&A Services! I want to place an order:\n\n'+lines+'\n\nTotal: Rs.'+total.toLocaleString()+'\n\nPlease confirm availability and delivery details.');
+  const msg = encodeURIComponent('Hi Radiokart! I want to place an order:\n\n'+lines+'\n\nTotal: Rs.'+total.toLocaleString()+'\n\nPlease confirm availability and delivery details.');
   window.open('https://wa.me/918637554239?text='+msg,'_blank');
 }
 
